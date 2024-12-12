@@ -40,23 +40,23 @@ const Card: React.FC<CardProps> = ({ title, location, image, contact }) => {
           <div>
             <Dialog>
               <DialogTrigger asChild>
-                <Button className="text-[70%] md:text-[90%]">Fetch Details</Button>
+                <Button className="text-[70%] md:text-[90%] smd:text-[100%]">Fetch Details</Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[320px]">
+              <DialogContent className="w-[240px] smd:w-[350px] ">
                 <DialogHeader>
-                  <DialogTitle>Fetch Details</DialogTitle>
-                  <DialogDescription>
+                  <DialogTitle className="text-[100%] md:text-[120%]">Fetch Details</DialogTitle>
+                  <DialogDescription className="text-[80%] md:text-[100%]">
                     Here are the details of the following employee.
                   </DialogDescription>
                 </DialogHeader>
-                <div className="flex flex-col">
+                <div className="flex flex-col text-[70%] md:text-[100%]">
                   <div>Name: {title} </div>
                   <div>Location: {location}</div>
                   <div>Contact Number: {contact}</div>
 
                   <div className="my-[1%]">Profile Image:</div>
                   <div>
-                    <img src={person} alt={image + "alt"} />
+                    <img src={person} alt={image + "alt"} className="w-[150px] smd:w-[200px]" />
                   </div>
                 </div>
               </DialogContent>

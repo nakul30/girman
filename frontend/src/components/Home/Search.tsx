@@ -1,4 +1,4 @@
-import React, { useState, useEffect  } from "react";
+import React, { useState, useEffect } from "react";
 import search_logo from "../../assets/search_logo.svg";
 import { FaSearch } from "react-icons/fa";
 import employeeData from "../../data.json";
@@ -20,9 +20,9 @@ const Search: React.FC = () => {
     setLoading(true);
     if (e.key === "Enter") {
       setFilteredEmployees([]);
-      if(value === "") {
+      if (value === "") {
         setFilteredEmployees([]);
-        navigate('/error');
+        navigate("/error");
         return;
       }
       const filtered = employees.filter(
@@ -32,10 +32,10 @@ const Search: React.FC = () => {
       );
 
       if (filtered.length === 0) {
-        navigate('/error');
+        navigate("/error");
         return;
       }
-      navigate('/');
+      navigate("/");
       setFilteredEmployees(filtered);
     }
     setLoading(false);
@@ -65,9 +65,10 @@ const Search: React.FC = () => {
         />
       </div>
       <div className="w-[80%] mt-[3%] flex flex-col md:flex md:flex-row md:flex-wrap md:justify-between smd:w-[60%]">
-        {filteredEmployees.map((employee) => {
+        {filteredEmployees.map((employee, index) => {
           return (
             <Card
+              key={index}
               image="../../assets/person.png"
               contact={employee.contact_number}
               title={employee.first_name + " " + employee.last_name}
