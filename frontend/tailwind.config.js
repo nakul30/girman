@@ -4,6 +4,10 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: {
     extend: {
+      screens: {
+        // "md": "490px",
+        "smd": "460px",
+      },
       backgroundImage: {
         "custom-gradient": "linear-gradient(180deg, #FFFFFF 31%, #B1CBFF 100%)",
       },
