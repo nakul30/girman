@@ -12,12 +12,12 @@ type Employee = {
 };
 const Search: React.FC = () => {
   const [value, setValue] = useState<string>("");
-  const [loading, setLoading] = useState<boolean>(false);
+  // const [loading, setLoading] = useState<boolean>(false);
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [filteredEmployees, setFilteredEmployees] = useState<Employee[]>([]);
   const navigate = useNavigate();
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    setLoading(true);
+    // setLoading(true);
     if (e.key === "Enter") {
       setFilteredEmployees([]);
       if (value === "") {
@@ -38,7 +38,7 @@ const Search: React.FC = () => {
       navigate("/");
       setFilteredEmployees(filtered);
     }
-    setLoading(false);
+    // setLoading(false);
   };
   useEffect(() => {
     setEmployees(employeeData);
